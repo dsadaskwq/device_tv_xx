@@ -1,4 +1,4 @@
-# Android device tree for TCL t982_ar31a8 (t982_ar31a8)
+# Android device tree for xxx
 
 ```
 #
