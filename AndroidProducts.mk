@@ -6,7 +6,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_t982_ar31a8.mk
+    $(LOCAL_DIR)/twrp_t982_ar31a8.mk
 
 COMMON_LUNCH_CHOICES := \
     twrp_t982_ar31a8-eng
