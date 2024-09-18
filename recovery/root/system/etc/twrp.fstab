@@ -1,0 +1,42 @@
+# mount point   fstype     device                                   device2                       flags
+# 定义挂载点  定义文件系统类型 定义挂载原块文件路径                                                       定义一些特性
+# Other partitions
+
+/system_root       ext4     /dev/block/bootdevice/by-name/system            flags=display="system";slotselect;logical;backup=1
+/system_ext        ext4     /dev/block/bootdevice/by-name/system_ext        flags=display="system_ext";slotselect;logical;backup=1
+/vendor            ext4     /dev/block/bootdevice/by-name/vendor            flags=display="vendor";slotselect;logical;backup=1
+/product           ext4     /dev/block/bootdevice/by-name/product           flags=display="product";slotselect;logical;backup=1
+/odm               ext4     /dev/block/bootdevice/by-name/odm               flags=display="odm";slotselect;logical;backup=1
+
+/boot              emmc     /dev/block/boot              flags=backup=1;slotselect;flashimg=1
+/recovery          emmc     /dev/block/recovery        flags=backup=1;slotselect;flashimg=1
+/vendor_boot       emmc     /dev/block/vendor_boot       flags=display="vendor_boot";slotselect;backup=1;flashimg=1
+/vbmeta            emmc     /dev/block/vbmeta            flags=display="vbmeta";slotselect;flashimg=1
+/vbmeta_system     emmc     /dev/block/vbmeta_system     flags=display="vbmeta_system";slotselect;backup=1;flashimg=1
+
+/misc              emmc     /dev/block/by-name/misc      flags=display="misc";backup=1;flashimg=1
+/bootloader        emmc     /dev/block/bootloader        flags=display="bootloader";backup=1;slotselect;flashimg=1
+/logo              emmc     /dev/block/logo              flags=display="logo";backup=1;slotselect;flashimg=1
+/misc              emmc     /dev/block/misc              flags=display="misc";backup=1;flashimg=1
+/dtb               emmc     /dev/block/dtbo              flags=display="dtb";backup=1;slotselect;flashimg=1
+
+/cache             ext4     /dev/block/cache             flags=backup=1;wipeingui;wipeduringfactoryreset;encryptable=footer
+/data              ext4     /dev/block/userdata          flags=display="data";backup=1
+/metadata          ext4     /dev/block/metadata          flags=display="metadata";backup=1
+
+/tclconfig         ext4     /dev/block/tclconfig         flags=display="tclconfig";backup=1;slotselect
+/tcluserdata       ext4     /dev/block/tcluserdata       flags=display="tcluserdata"
+/persist           ext4     /dev/block/persist           flags=display="persist
+/factory           vfat     /dev/block/factory           flags=display="factory"
+
+/impdata           ext4     /dev/block/impdata           flags=display="impdata"      
+/param             ext4     /dev/block/param             flags=display="param"
+/odm_ext           ext4     /dev/block/odm_ext           flags=display="odm_ext";backup=1;slotselect
+/oem               ext4     /dev/block/oem               flags=display="oem";backup=1;slotselect
+/tee               ext4     /dev/block/tee               flags=display="tee"
+#/udisk            auto     /dev/block/sd##              flags=display="udisk"
+
+# Removable storage
+#/dev/block/sda1         auto    auto    defaults        defaults
+#/usb_otg           auto     /dev/block/sda1              flags=storage;wipeingui;removable
+/usb-otg           auto     /dev/block/sda1         /dev/block/sda        flags=display="USB-OTG";storage;wipeingui;removable
