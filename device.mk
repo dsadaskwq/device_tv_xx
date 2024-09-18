@@ -16,10 +16,22 @@ AB_OTA_POSTINSTALL_CONFIG += \
 # Boot control HAL
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-service
+    android.hardware.boot@1.0-service \
+    android.hardware.boot@1.0-impl-wrapper.recovery \
+    android.hardware.boot@1.0-impl-wrapper \
+    android.hardware.boot@1.0-impl.recovery \
+    bootctrl.$(PRODUCT_PLATFORM) \
+    bootctrl.$(PRODUCT_PLATFORM).recovery \
+    android.hardware.health@2.0-service \
+    android.hardware.health@2.1-service \
+    android.hardware.boot@1.0-impl-1.1.droidlogic
 
 PRODUCT_PACKAGES += \
-    bootctrl.sc2
+    bootctrl.sc2 \
+    bootctrl.trinket \
+    libgptutils \
+    libz \
+    libcutils
 
 PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     bootctrl.sc2 \
@@ -33,3 +45,11 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier \
     update_engine_sideload
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
+
+# tzdata
+PRODUCT_PACKAGES_ENG += \
+    tzdata_twrp
