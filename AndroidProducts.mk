@@ -9,4 +9,4 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/omni_t982_ar31a8.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_t982_ar31a8-eng
+    twrp_t982_ar31a8-eng
