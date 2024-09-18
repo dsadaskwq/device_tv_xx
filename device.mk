@@ -6,6 +6,10 @@
 #
 
 LOCAL_PATH := device/tcl/t982_ar31a8
+
+# define hardware platform
+PRODUCT_PLATFORM := sc2
+
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -15,31 +19,25 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
+    otapreopt_script \
+    cppreopts.sh \
+    update_engine \
+    update_verifier \
+    update_engine_sideload \
     android.hardware.boot@1.0-impl \
     android.hardware.boot@1.0-service \
     android.hardware.boot@1.0-impl-wrapper.recovery \
     android.hardware.boot@1.0-impl-wrapper \
     android.hardware.boot@1.0-impl.recovery \
-    bootctrl.$(PRODUCT_PLATFORM) \
-    bootctrl.$(PRODUCT_PLATFORM).recovery \
     android.hardware.health@2.0-service \
     android.hardware.health@2.1-service \
-    android.hardware.boot@1.0-impl-1.1.droidlogic
-
-PRODUCT_PACKAGES += \
-    bootctrl.sc2 \
+    android.hardware.boot@1.0-impl-1.1.droidlogic \
+    bootctrl.$(PRODUCT_PLATFORM) \
+    bootctrl.$(PRODUCT_PLATFORM).recovery \
     bootctrl.trinket \
     libgptutils \
     libz \
     libcutils
-
-
-PRODUCT_PACKAGES += \
-    otapreopt_script \
-    cppreopts.sh \
-    update_engine \
-    update_verifier \
-    update_engine_sideload
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
