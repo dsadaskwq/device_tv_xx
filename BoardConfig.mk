@@ -113,7 +113,6 @@ TW_BRIGHTNESS_PATH := "/sys/devices/platform/backlight/backlight/aml-bl/brightne
 TW_DEFAULT_BRIGHTNESS := 200
 TW_EXTRA_LANGUAGES := true
 TW_DEFAULT_LANGUAGE := zh_CN  #设置默认语言为简体中文
-TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true
