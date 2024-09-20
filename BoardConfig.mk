@@ -69,9 +69,6 @@ TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 
-TARGET_KERNEL_CONFIG := t982_ar31a8_defconfig
-TARGET_KERNEL_SOURCE := kernel/tcl/t982_ar31a8
-
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
 BOARD_BOOTIMAGE_PARTITION_SIZE := 50331648
@@ -112,7 +109,7 @@ PLATFORM_VERSION := 16.1.0
 
 # TWRP Configuration
 TW_THEME := landscape_hdpi
-TW_BRIGHTNESS_PATH := "/brightness"
+TW_BRIGHTNESS_PATH := "/sys/devices/platform/backlight/backlight/aml-bl/brightness"
 TW_EXTRA_LANGUAGES := true
 TW_DEFAULT_LANGUAGE := zh_CN  #设置默认语言为简体中文
 TW_SCREEN_BLANK_ON_BOOT := true
@@ -123,3 +120,7 @@ TW_IGNORE_MISC_WIPE_DATA := true  #是否在 wipe data 时忽略 misc
 TW_EXCLUDE_TWRPAPP := true
 TW_INCLUDE_NTFS_3G := true
 TW_NO_SCREEN_TIMEOUT := true
+
+# Debug
+TARGET_USES_LOGD := true
+TWRP_INCLUDE_LOGCAT := true
