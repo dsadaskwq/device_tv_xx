@@ -110,6 +110,7 @@ PLATFORM_VERSION := 16.1.0
 # TWRP Configuration
 TW_THEME := landscape_hdpi
 TW_BRIGHTNESS_PATH := "/sys/devices/platform/backlight/backlight/aml-bl/brightness"
+TW_DEFAULT_BRIGHTNESS := 200
 TW_EXTRA_LANGUAGES := true
 TW_DEFAULT_LANGUAGE := zh_CN  #设置默认语言为简体中文
 TW_SCREEN_BLANK_ON_BOOT := true
@@ -120,6 +121,7 @@ TW_IGNORE_MISC_WIPE_DATA := true  #是否在 wipe data 时忽略 misc
 TW_EXCLUDE_TWRPAPP := true
 TW_INCLUDE_NTFS_3G := true
 TW_NO_SCREEN_TIMEOUT := true
+TW_NO_SCREEN_BLANK := true
 
 # Debug
 TARGET_USES_LOGD := true
